@@ -1,0 +1,146 @@
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+  .fraunces-regular {
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "SOFT" 0,
+      "WONK" 0;
+  }
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: hsl(30, 38%, 92%);
+    font-family: montserrat;
+    font-size: 14px;
+}
+
+main {
+    margin: 240px auto;
+    width: 40vw;
+    height: min-max(55vh, 600px);
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    max-inline-size: 50% ;
+    block-size: auto;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    flex: 1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+section {
+    display: block;
+    padding: 20px 40px;
+    background-color: hsl(0, 0%, 100%) ;
+    flex: 1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+p {
+    margin: 20px 0;
+    color: hsl(228, 12%, 48%);
+    font-weight: 500;
+    line-height: 1.8em;
+    text-wrap: pretty;
+}
+
+.texto {
+    margin-bottom: 5px;
+}
+
+.perfume {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+
+h1 {
+    color: hsl(212, 21%, 14%);
+    font-family: fraunces;
+    font-size: 2.8em;
+    font-weight: 700;
+    line-height: 1em;
+}
+
+section div {
+    font-family: fraunces;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin-top: 0;
+}
+
+.precio {
+    color: hsl(158, 36%, 37%);
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.precio-tachado {
+    font-weight: 700;
+    color: hsl(228, 12%, 48%);
+    text-decoration: line-through;
+}
+
+button {
+    text-align: center;
+    font-size: 1.1em;
+    background-color: hsl(158, 36%, 37%);
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    color: hsl(0, 0%, 100%);
+    outline: none;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button img {
+    margin: 0 10px;
+}
+
+@media (max-width: 800px) {
+    main {
+        margin: 5vh auto;
+        width: 80vw;
+        height: min-max(80vh, 600px);
+        flex-direction: column;
+    }
+
+    img:first-child {
+        border-radius: 0px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        max-inline-size: 100%;
+        max-height: 35vh;
+    }
+
+    section {
+        border-radius: 0px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
