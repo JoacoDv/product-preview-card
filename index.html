@@ -30,7 +30,7 @@
       <p class="texto">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
       Perfumer-Creator for the House of CHANEL.</p>
 
-      <div>
+      <div id="price">
         <p class="precio">$149.99</p>
         <p class="precio-tachado">$169.99</p>
       </div>
@@ -38,7 +38,57 @@
       <button><img src="./images/icon-cart.svg" alt="">Add to Cart</button>
     </section>
 
-</main>
+  </main>
+
+  <script type="module">
+  import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm"
+  const main = document.querySelector("main")
+  const image = document.querySelector("img")
+  const textContainer = document.querySelector("section")
+  const perfumeText = document.querySelector(".perfume")
+  const title = document.querySelector("h1")
+  const text = document.querySelector(".texto")
+  const price = document.getElementById("price")
+  const button = document.querySelector("button")
+
+  if (window.innerWidth >= 800) {
+    animate(image, {x: [-100, 0], opacity: [0,1]}, {duration: .4, ease: "easeOut"})
+    animate(textContainer, {x: [100, 0], opacity: [0,1]}, {duration: .4, ease: "easeOut"})
+  } else {
+    animate(image, {y: [80, 0], opacity: [0,1]}, {duration: .4, ease: "easeOut"})
+    animate(textContainer, {y: [400, 0], opacity: [0,1]}, {duration: .4, ease: "easeOut"})
+  }
+
+  animate(perfumeText, {y: [-50, 0], opacity: [0,1]}, {duration: .3, delay: .4, ease: "easeOut"})
+    animate(title, {y: [-50, 0], opacity: [0,1]}, {duration: .3,delay: .4, ease: "easeOut"})
+    animate(text, {x: [50, 0], opacity: [0,1]}, {duration: .3, delay: .6, ease: "easeOut"})
+    animate(price, {y: [50, 0], opacity: [0,1]}, {duration: .3, delay: .6, ease: "easeOut"})
+    animate(button, {y: [-10, 0], opacity: [0,1], scale: [.6, 1]}, {duration: .4,delay: .75, ease: "easeOut"})
+
+
+button.addEventListener("mouseenter", handleEvent);
+button.addEventListener("mouseleave", handleEvent);
+button.addEventListener("mousedown", handleEvent);
+button.addEventListener("mouseup", handleEvent);
+
+function handleEvent(event) {
+  switch (event.type) {
+    case "mouseenter":
+      animate(button, { scale: 1.15, backgroundColor: "hsl(158, 36%, 27%)"}, { duration: 0.3 });
+      break;
+    case "mouseleave":
+      animate(button, { scale: 1, backgroundColor: "" }, { duration: 0.3 });
+      break;
+    case "mousedown":
+      animate(button, { scale: 1.1 }, { duration: 0.1 });
+      break;
+    case "mouseup":
+      animate(button, { scale: 1.15 }, { duration: 0.1 });
+      break;
+  }
+}
+
+  </script>
 
 </body>
 </html>
